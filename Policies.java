@@ -24,10 +24,11 @@ public class Policies {
         }
 
         //Loop through sameIPArrayList
+        for(List<LogClass> logArray : sameIP2DArrayList){
             //Group logs that are within 5 seconds of each other named tempArrayList. [[all logs within 5 secs of IP 1] , [all logs within 5 secs of IP 2] , ...]
             //Loop through tempArrayList
                 //If a group has at least one diff user among each other, add that group to newLogs
-
+        }
         //Remove duplicate groups from newLogs (meanign that they have the same exact elements in the group but diff order)
         return newLogs;
     }
