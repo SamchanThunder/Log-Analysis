@@ -22,6 +22,7 @@ All logs are sent to a database, where they are all stored. These logs could be 
 *Log 5:* IP: 222.222.222.222 // User: Ryan // Date: 2024-07-01 11:48:26 // Content: Ryan sent 2000$ to Jack
 
 **Example Administrator Output:**
+
 These Logs Break Policy 2: Log 1,Log 2
 
 These Logs Break Policy 1: Log 4, Log 5
