@@ -2,19 +2,17 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main{
-    Date date = new Date();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    String str = format.format(date);
     public static void main(String[] args) {
-        //Used for testing
-        Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String str = format.format(date);
+        new LogClass("123.456.789.000" , "Michael (Employee)" , "2024-07-01 11:47:57" , "Michael (Employee) sent 5000$ to Sofia", 57);
 
-        new LogClass("111.111.111", "A", str, "Sam bought 3 oranges for 5$", 9);
-        new LogClass("111.111.111", "o", str, "Sam bought 3 oranges for 5$", 14);
-        new LogClass("111.111.111", "A", str, "Sam bought 3 oranges for 5$", 15);
-        new LogClass("111.111.111", "A", str, "Sam bought 3 oranges for 5$", 15);
-        new LogClass("200.200.200", "A", str, "Sam bought 3 oranges for 5$", 18);
+        new LogClass("999.999.999.999" , "Michael (Employee)" , "2024-07-01 11:47:59" , "Michael (Employee) sent 9000$ to Joseph", 59);
+
+        new LogClass("999.999.999.999" , "Joseph" , "2024-07-01 11:48:01" , "Joseph sent 3000$ to Tim (Employee)", 61);
+
+        new LogClass("222.222.222.222" , "Jack" , "2024-07-01 11:48:20" , "Jack sent 4000$ to Sam", 80);
+
+        new LogClass("222.222.222.222" , "Ryan" , "2024-07-01 11:48:26" , "Ryan sent 2000$ to Jack" , 86);
+
+        new LogClass("222.222.222.222" , "Jack" , "2024-07-01 11:48:28" , "Jack sent 2000$ to Sam" , 88);
     }
 }
