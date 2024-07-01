@@ -29,4 +29,8 @@ These Logs Break Policy 1: Log 4, Log 5
 
 **Reason:**
 
-(Log 1 and 2 break policy 2 because the same user has activity on two different IP addresses within 5 seconds. Log 3 and 4 break policy 1 because two users have activity on the same IP Address within 5 seconds. Log 4 and Log 5 do not break policy 1 because Log 5 is 6 seconds after Log 4)
+Log 1 and 2 break policy 2 because the same user has activity on two different IP addresses within 5 seconds. 
+
+Log 3 and 4 break policy 1 because two users have activity on the same IP Address within 5 seconds. 
+
+Log 4 and Log 5 do not break policy 1 because Log 5 is 6 seconds after Log 4
