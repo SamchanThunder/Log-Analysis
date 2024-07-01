@@ -9,6 +9,10 @@ All logs are sent to a database, where they are all stored. These logs are analy
 
 2. The same user cannot have activity on different IP addresses within 5 seconds.
 
+3. A log cannot have an invalid or null IP Address, User, and Date
+
+4. A log's date/time cannot be before that of the log before it. 
+
 **Simplified Example with Transaction Logs for Company A:**
 
 *Log 1:* IP: 123.456.789.000 // User: Michael (Employee) // Date: 2024-07-01 11:47:57 // Content: Michael (Employee) sent 5000$ to Sofia
@@ -21,7 +25,7 @@ All logs are sent to a database, where they are all stored. These logs are analy
 
 *Log 5:* IP: 222.222.222.222 // User: Ryan // Date: 2024-07-01 11:48:26 // Content: Ryan sent 2000$ to Jack
 
-*Log 6:* IP: 222.222.222.222 // User: Jack // Date: 2024-07-01 11:48:28 // Content: Jack sent 2000$ to Sam
+*Log 6:* IP: 222.222.222.222 // User: Jack // Date: 2024-07-01 11:48:23 // Content: Jack sent 2000$ to Sam
 
 **Example Administrator Output:**
 
@@ -30,6 +34,8 @@ All logs are sent to a database, where they are all stored. These logs are analy
 11:48:01 - These Logs Break Policy 1: Log 2, Log 3
 
 11:48:28 - These logs break Policy 1: Log 5, Log 6
+
+11:48:30 - This log breaks Policy 4: Log 6
 
 **Reason:**
 
@@ -40,3 +46,5 @@ Log 2 and 3 break policy 1 because two users have activity on the same IP Addres
 Log 4 and Log 5 do not break policy 1 because Log 5 is 6 seconds after Log 4
 
 Log 5 and Log 6 break policy 1 because two users have activity on the same IP Address within 5 seconds. 
+
+Log 6 breaks policy 4 because Log 6's date is 3 seconds before that of Log 5.

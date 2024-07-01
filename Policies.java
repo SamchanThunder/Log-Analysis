@@ -69,4 +69,38 @@ public class Policies {
     }
     //End of Policy_2
 
-}
+    //Policy_3: A log cannot have an invalid or null IP Address, User, and Date
+    public static LogClass policy_3(LogClass log){
+        if(log.getIP() == null || log.getUser() == null || log.getTime() == null || log.getIP() == "" || log.getUser() == "" || log.getTime() == ""){
+            return log;
+        }
+
+        String[] IPFormat = (log.getIP()).split("\\.");
+        if(IPFormat.length != 4){
+            return log;
+        }
+        for(String x : IPFormat){
+            if(!(x.matches("[0-9]+"))){
+                return log;
+            }
+        }
+        return null;
+    }
+    //End of Policy_3
+
+    //Policy_4: A log's date/time cannot be before that of the log before it. 
+    private static LogClass compareLogPolicy4;
+    public static LogClass policy_4(LogClass log){
+        if(compareLogPolicy4 == null){
+            compareLogPolicy4 = log;
+            return null;
+        }
+        else if(compareLogPolicy4.getEpochTime() > log.getEpochTime()){
+            compareLogPolicy4 = log;
+            return log;
+        }else{
+            compareLogPolicy4 = log;
+            return null;
+        }
+    }
+}   
