@@ -48,7 +48,7 @@ public class Policies {
         newLogs.add(log);
 
         if(compareLogPolicy2 != null){           
-            if(compareLogPolicy1.getEpochTime() + AMOUNT_OF_SECONDS_POLICY2 < log.getEpochTime()){
+            if(compareLogPolicy2.getEpochTime() + AMOUNT_OF_SECONDS_POLICY2 < log.getEpochTime()){
                 withinSecondsListPolicy2 = new ArrayList<LogClass>();        
             }
             withinSecondsListPolicy2.add(log);
@@ -104,4 +104,49 @@ public class Policies {
         }
     }
     //End of Policy_4
+
+    //Policy_5: There cannot be more than two logs of activity on an IP Address within 5 seconds.
+    private static LogClass compareLogPolicy5;
+    private static List<LogClass> withinSecondsListPolicy5 = new ArrayList<>();
+    private static final int AMOUNT_OF_SECONDS_POLICY5 = 5;
+    public static List<LogClass> policy_5(LogClass log){
+        List<LogClass> newLogs = new ArrayList<LogClass>();
+        newLogs.add(log);
+
+        if(compareLogPolicy5 != null){           
+            if(compareLogPolicy5.getEpochTime() + AMOUNT_OF_SECONDS_POLICY5 < log.getEpochTime()){
+                withinSecondsListPolicy5 = new ArrayList<LogClass>();        
+            }
+            withinSecondsListPolicy5.add(log);
+            
+            List<LogClass> sameIPList = new ArrayList<LogClass>();
+
+            for(LogClass subLog : withinSecondsListPolicy5){
+                if (subLog.getIP().equals(log.getIP())){
+                    sameIPList.add(subLog);
+                }
+            }
+
+            List<LogClass> tempList = new ArrayList<LogClass>();
+
+            for(LogClass subLog : sameIPList){
+                tempList.add(subLog);
+            }
+
+            for(LogClass subLog : sameIPList){
+                if(subLog.getEpochTime() < log.getEpochTime() - 5){
+                    tempList.remove(subLog);
+                }
+            }
+            compareLogPolicy5 = log;
+            newLogs = tempList;
+
+            return newLogs;
+        }else{
+            withinSecondsListPolicy5.add(log);
+            compareLogPolicy5 = log;
+            return newLogs;
+        }
+    }
+
 }   

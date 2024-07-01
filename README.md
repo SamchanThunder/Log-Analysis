@@ -13,6 +13,8 @@ All logs are sent to a database, where they are all stored. These logs are analy
 
 4. A log's date/time cannot be before that of the log before it. 
 
+5. There cannot be more than two logs of activity on an IP Address within 5 seconds.
+
 **Simplified Example with Transaction Logs for Company A:**
 
 *Log 1:* IP: 123.456.789.000 // User: Michael (Employee) // Date: 2024-07-01 11:47:57 // Content: Michael (Employee) sent 5000$ to Sofia
