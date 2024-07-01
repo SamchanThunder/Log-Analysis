@@ -6,6 +6,7 @@ public class Main{
     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String str = format.format(date);
     public static void main(String[] args) {
+        //Used for testing
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String str = format.format(date);
@@ -13,5 +14,7 @@ public class Main{
         new LogClass("111.111.111", "A", str, "Sam bought 3 oranges for 5$", 9);
         new LogClass("111.111.111", "o", str, "Sam bought 3 oranges for 5$", 14);
         new LogClass("111.111.111", "A", str, "Sam bought 3 oranges for 5$", 15);
+        new LogClass("111.111.111", "A", str, "Sam bought 3 oranges for 5$", 15);
+        new LogClass("200.200.200", "A", str, "Sam bought 3 oranges for 5$", 18);
     }
 }

@@ -15,9 +15,16 @@ public class LogClass {
         content = givenContent;
         epochTime = givenEpochTime;
         List<LogClass> policy_1_break = Policies.policy_1(this);
+        List<LogClass> policy_2_break = Policies.policy_2(this);
         if (policy_1_break.size() >= 2){
             System.out.println("These logs break policy 1:");
             for(LogClass subLog : policy_1_break){
+                System.out.println(subLog.toString());
+            }
+        }
+        if (policy_2_break.size() >= 2){
+            System.out.println("These logs break policy 2:");
+            for(LogClass subLog : policy_2_break){
                 System.out.println(subLog.toString());
             }
         }
