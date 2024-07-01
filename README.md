@@ -23,9 +23,9 @@ All logs are sent to a database, where they are all stored. These logs are analy
 
 *Log 4:* IP: 222.222.222.222 // User: Jack // Date: 2024-07-01 11:48:20 // Content: Jack sent 4000$ to Sam
 
-*Log 5:* IP: 222.222.222.222 // User: Ryan // Date: 2024-07-01 11:48:26 // Content: Ryan sent 2000$ to Jack
+*Log 5:* IP: 222.222.222.222 // User: Ryan // Date: 2024-07-01 11:48:29 // Content: Ryan sent 2000$ to Jack
 
-*Log 6:* IP: 222.222.222.222 // User: Jack // Date: 2024-07-01 11:48:23 // Content: Jack sent 2000$ to Sam
+*Log 6:* IP: 222.222.222.222 // User: Jack // Date: 2024-07-01 11:48:27 // Content: Jack sent 2000$ to Sam
 
 **Example Administrator Output:**
 
@@ -43,8 +43,8 @@ Log 1 and 2 break policy 2 because the same user has activity on two different I
 
 Log 2 and 3 break policy 1 because two users have activity on the same IP Address within 5 seconds. 
 
-Log 4 and Log 5 do not break policy 1 because Log 5 is 6 seconds after Log 4
+Log 4 and Log 5 do not break policy 1 because Log 5 is 9 seconds after Log 4
 
 Log 5 and Log 6 break policy 1 because two users have activity on the same IP Address within 5 seconds. 
 
-Log 6 breaks policy 4 because Log 6's date is 3 seconds before that of Log 5.
+Log 6 breaks policy 4 because Log 6's date is 2 seconds before that of Log 5.

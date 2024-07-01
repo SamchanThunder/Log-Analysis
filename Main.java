@@ -11,8 +11,8 @@ public class Main{
 
         new LogClass("222.222.222.222" , "Jack" , "2024-07-01 11:48:20" , "Jack sent 4000$ to Sam", 80);
 
-        new LogClass("222.222.222.222" , "Ryan" , "2024-07-01 11:48:26" , "Ryan sent 2000$ to Jack" , 86);
+        new LogClass("222.222.222.222" , "Ryan" , "2024-07-01 11:48:29" , "Ryan sent 2000$ to Jack" , 86);
 
-        new LogClass("222.222.222.222" , "Jack" , "2024-07-01 11:48:23" , "Jack sent 2000$ to Sam" , 83);
+        new LogClass("222.222.222.222" , "Jack" , "2024-07-01 11:48:27" , "Jack sent 2000$ to Sam" , 83);
     }
 }
