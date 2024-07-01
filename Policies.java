@@ -11,7 +11,7 @@ public class Policies {
         newLogs.add(log);
 
         if(compareLog != null){           
-            if(compareLog.getEpochTime() + 5 < log.getEpochTime()){
+            if(compareLog.getEpochTime() + AMOUNT_OF_SECONDS < log.getEpochTime()){
                 withinSecondsList = new ArrayList<LogClass>();        
             }
             withinSecondsList.add(log);
@@ -25,7 +25,7 @@ public class Policies {
             }
 
             for(LogClass subLog: sameIPList){
-                if(!(subLog.getUser().equals(log.getUser()))){
+                if(!(subLog.getUser().equals(log.getUser())) && log.getEpochTime() <= subLog.getEpochTime() + AMOUNT_OF_SECONDS){
                     newLogs.add(subLog);
                 }
             }

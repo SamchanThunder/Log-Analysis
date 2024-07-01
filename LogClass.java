@@ -5,6 +5,7 @@ public class LogClass {
     private String user;
     private String time;
     private String content;
+    //Epoch time will get the amount of seconds since 1970 0AM UTC.
     private int epochTime;
 
     public LogClass(String givenIP, String givenUser, String givenTime, String givenContent, int givenEpochTime){
