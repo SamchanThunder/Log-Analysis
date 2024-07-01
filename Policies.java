@@ -66,8 +66,7 @@ public class Policies {
             compareLogPolicy2 = log;
             return newLogs;
         }
-        
-
     }
+    //End of Policy_2
 
 }
