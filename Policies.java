@@ -120,17 +120,13 @@ public class Policies {
             withinSecondsListPolicy5.add(log);
             
             List<LogClass> sameIPList = new ArrayList<LogClass>();
+            List<LogClass> tempList = new ArrayList<LogClass>();
 
             for(LogClass subLog : withinSecondsListPolicy5){
                 if (subLog.getIP().equals(log.getIP())){
                     sameIPList.add(subLog);
+                    tempList.add(subLog);
                 }
-            }
-
-            List<LogClass> tempList = new ArrayList<LogClass>();
-
-            for(LogClass subLog : sameIPList){
-                tempList.add(subLog);
             }
 
             for(LogClass subLog : sameIPList){
@@ -149,4 +145,4 @@ public class Policies {
         }
     }
 
-}   
+}
