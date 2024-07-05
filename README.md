@@ -1,4 +1,4 @@
-**Log Analysis**
+**Log Analysis -- Sample Project**
 
 Computer Activity of the public who is on a company's service and of the employees of the company are recorded on logs (represented as Java Objects). A log records IP Address, User, Date of Activity, and Content of the Activity. 
 All logs are sent to a database, where they are all stored. These logs are analyzed through policies to find any suspicious activity to prevent exploitation and major mistakes that could damage the company. If a policy is broken, then admins are notified of the policy that is broken and the logs associated with it. Everytime a log is created, the policies are checked. This specific program (Log Analysis) analyzes logs to find if any policies are broken.
