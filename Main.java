@@ -1,6 +1,3 @@
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 public class Main{
     public static void main(String[] args) {
         new LogClass("123.456.789.000" , "Michael (Employee)" , "2024-07-01 11:47:57" , "Michael (Employee) sent 5000$ to Sofia", 57);
